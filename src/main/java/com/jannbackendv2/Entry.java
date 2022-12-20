@@ -15,9 +15,9 @@ public class Entry {
     private long id;
 
 
-    private String _name;
-    private long _score;
-    private long _time;
+    private String name;
+    private long score;
+    private long time;
 
     public Instant getCreatedAt() {
         return createdAt;
@@ -29,23 +29,23 @@ public class Entry {
         return id;
     }
 
-    public String get_name() {
-        return _name;
+    public String getName() {
+        return name;
     }
 
-    public long get_score() {
-        return _score;
+    public long getScore() {
+        return score;
     }
 
-    public long get_time() {
-        return _time;
+    public long getTime() {
+        return time;
     }
 
 
-    public Entry(String _name, Long _score, Long _time) {
-        this._name = _name;
-        this._score = _score;
-        this._time = _time;
+    public Entry(String name, Long score, Long time) {
+        this.name = name;
+        this.score = score;
+        this.time = time;
         this.createdAt = Instant.now();
     }
 
