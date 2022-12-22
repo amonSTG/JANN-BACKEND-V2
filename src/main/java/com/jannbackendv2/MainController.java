@@ -21,7 +21,7 @@ public class MainController {
         List<EntryDTO> response = new LinkedList<>();
 
         for (Entry entry : entryRepository.findAllByOrderByScoreDesc()) {
-            response.add(new EntryDTO(entry.getName(), entry.getScore(), entry.getTime()));
+            response.add(new EntryDTO(entry.getName(), entry.getScore(), entry.getTime(), entry.getGameType()));
         }
 
         return response;
@@ -29,8 +29,8 @@ public class MainController {
 
     @PostMapping("/api/score")
     public EntryDTO write(@RequestBody EntryDTO entryDTO) {
-        Entry entry = entryRepository.save(new Entry(entryDTO.getName(), entryDTO.getScore(), entryDTO.getTime()));
-        return new EntryDTO(entry.getName(), entry.getScore(), entryDTO.getTime());
+        Entry entry = entryRepository.save(new Entry(entryDTO.getName(), entryDTO.getScore(), entryDTO.getTime(), entryDTO.getGameType()));
+        return new EntryDTO(entry.getName(), entry.getScore(), entryDTO.getTime(), entry.getGameType());
     }
 }
 

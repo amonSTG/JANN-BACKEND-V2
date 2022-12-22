@@ -19,6 +19,12 @@ public class Entry {
     private long score;
     private long time;
 
+    public String getGameType() {
+        return gameType;
+    }
+
+    private String gameType;
+
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -42,11 +48,12 @@ public class Entry {
     }
 
 
-    public Entry(String name, Long score, Long time) {
+    public Entry(String name, Long score, Long time, String gameType) {
         this.name = name;
         this.score = score;
         this.time = time;
         this.createdAt = Instant.now();
+        this.gameType = gameType;
     }
 
     public Entry(){

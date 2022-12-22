@@ -11,6 +11,12 @@ public class EntryDTO {
     private Long score;
     private Long time;
 
+    public String getGameType() {
+        return gameType;
+    }
+
+    private String gameType;
+
     public void set_name(String _name) {
         this.name = name;
     }
@@ -36,9 +42,10 @@ public class EntryDTO {
     }
 
 
-    public EntryDTO(String name, Long score, Long time) {
+    public EntryDTO(String name, Long score, Long time, String gameType) {
         this.name = name;
         this.score = score;
         this.time = time;
+        this.gameType = gameType;
     }
 }
